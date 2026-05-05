@@ -6,7 +6,7 @@ const RENDER_DEBOUNCE_MS = 150;
 const APPLY_EDIT_DEBOUNCE_MS = 250;
 
 export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
-  public static readonly viewType = 'markdownPro.editor';
+  public static readonly viewType = 'markdownJet.editor';
 
   public static activeDoc: vscode.TextDocument | undefined;
   public static activeWebview: vscode.WebviewPanel | undefined;
@@ -36,16 +36,16 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
     };
 
     const cmds = vscode.Disposable.from(
-      vscode.commands.registerCommand('markdownPro.viewMode.editOnly',           () => setMode('edit')),
-      vscode.commands.registerCommand('markdownPro.viewMode.editOnly.active',    () => setMode('edit')),
-      vscode.commands.registerCommand('markdownPro.viewMode.both',               () => setMode('both')),
-      vscode.commands.registerCommand('markdownPro.viewMode.both.active',        () => setMode('both')),
-      vscode.commands.registerCommand('markdownPro.viewMode.previewOnly',        () => setMode('preview')),
-      vscode.commands.registerCommand('markdownPro.viewMode.previewOnly.active', () => setMode('preview')),
+      vscode.commands.registerCommand('markdownJet.viewMode.editOnly',           () => setMode('edit')),
+      vscode.commands.registerCommand('markdownJet.viewMode.editOnly.active',    () => setMode('edit')),
+      vscode.commands.registerCommand('markdownJet.viewMode.both',               () => setMode('both')),
+      vscode.commands.registerCommand('markdownJet.viewMode.both.active',        () => setMode('both')),
+      vscode.commands.registerCommand('markdownJet.viewMode.previewOnly',        () => setMode('preview')),
+      vscode.commands.registerCommand('markdownJet.viewMode.previewOnly.active', () => setMode('preview')),
 
       // Outline → reveal: jump to a specific line in the file's custom editor.
       vscode.commands.registerCommand(
-        'markdownPro.revealLine',
+        'markdownJet.revealLine',
         async (uri: vscode.Uri, line: number) => {
           if (!uri) return;
           // Make sure the file is open in our editor (no-op if already open).
@@ -65,7 +65,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
   }
 
   static publishModeContext(mode: string | undefined) {
-    vscode.commands.executeCommand('setContext', 'markdownPro.activeMode', mode ?? 'edit');
+    vscode.commands.executeCommand('setContext', 'markdownJet.activeMode', mode ?? 'edit');
   }
 
   resolveCustomTextEditor(
@@ -73,7 +73,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
     webviewPanel: vscode.WebviewPanel,
     _token: vscode.CancellationToken
   ): void {
-    console.log('[markdownPro] resolveCustomTextEditor', document.uri.fsPath);
+    console.log('[markdownJet] resolveCustomTextEditor', document.uri.fsPath);
     MarkdownEditorProvider.activeDoc = document;
     MarkdownEditorProvider.activeWebview = webviewPanel;
     MarkdownEditorProvider.panels.add(webviewPanel);

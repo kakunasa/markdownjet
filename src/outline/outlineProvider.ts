@@ -12,7 +12,7 @@ export class OutlineItem extends vscode.TreeItem {
     super(label, vscode.TreeItemCollapsibleState.None);
     this.iconPath = new vscode.ThemeIcon('symbol-namespace');
     this.command = {
-      command: 'markdownPro.revealLine',
+      command: 'markdownJet.revealLine',
       title: '跳转到标题',
       arguments: [resource, line]
     };
@@ -39,7 +39,7 @@ export class OutlineProvider implements vscode.TreeDataProvider<OutlineItem> {
     if (element) return element.children;
 
     // Prefer the doc shown in our custom editor (no native TextEditor exists
-    // when the markdownPro.editor webview is focused). Fall back to the
+    // when the markdownJet.editor webview is focused). Fall back to the
     // standard active text editor.
     const doc =
       MarkdownEditorProvider.activeDoc

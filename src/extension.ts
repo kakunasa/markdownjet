@@ -5,11 +5,11 @@ import { MarkdownLinter } from './lint/linter';
 import { OutlineProvider } from './outline/outlineProvider';
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('[markdownPro] activated, registering custom editor markdownPro.editor');
+  console.log('[markdownJet] activated, registering custom editor markdownJet.editor');
   context.subscriptions.push(MarkdownEditorProvider.register(context));
 
   context.subscriptions.push(
-    vscode.commands.registerCommand('markdownPro.openInTextEditor', async (uri?: vscode.Uri) => {
+    vscode.commands.registerCommand('markdownJet.openInTextEditor', async (uri?: vscode.Uri) => {
       const target = uri ?? MarkdownEditorProvider.activeDoc?.uri;
       if (!target) {
         vscode.window.showWarningMessage('没有可打开的 Markdown 文件');
@@ -28,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   const outline = new OutlineProvider();
   context.subscriptions.push(
-    vscode.window.registerTreeDataProvider('markdownProOutline', outline),
+    vscode.window.registerTreeDataProvider('markdownJetOutline', outline),
     vscode.window.onDidChangeActiveTextEditor(() => outline.refresh()),
     vscode.window.tabGroups.onDidChangeTabs(() => outline.refresh()),
     vscode.workspace.onDidChangeTextDocument((e) => {

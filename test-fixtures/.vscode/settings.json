@@ -1,6 +1,6 @@
 {
   "workbench.editorAssociations": {
-    "*.md": "markdownPro.editor",
-    "*.markdown": "markdownPro.editor"
+    "*.md": "markdownJet.editor",
+    "*.markdown": "markdownJet.editor"
   }
 }

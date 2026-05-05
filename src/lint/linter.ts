@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
 export class MarkdownLinter implements vscode.Disposable {
-  private collection = vscode.languages.createDiagnosticCollection('markdownPro');
+  private collection = vscode.languages.createDiagnosticCollection('markdownJet');
   private subs: vscode.Disposable[] = [];
 
   constructor() {
@@ -9,7 +9,7 @@ export class MarkdownLinter implements vscode.Disposable {
       vscode.workspace.onDidOpenTextDocument((d) => this.lintIfEnabled(d)),
       vscode.workspace.onDidChangeTextDocument((e) => this.lintIfEnabled(e.document)),
       vscode.workspace.onDidCloseTextDocument((d) => this.collection.delete(d.uri)),
-      vscode.commands.registerCommand('markdownPro.lint.run', () => {
+      vscode.commands.registerCommand('markdownJet.lint.run', () => {
         const doc = vscode.window.activeTextEditor?.document;
         if (doc) this.lint(doc);
       })
@@ -22,7 +22,7 @@ export class MarkdownLinter implements vscode.Disposable {
   private lintIfEnabled(doc: vscode.TextDocument) {
     if (doc.languageId !== 'markdown') return;
     const enabled = vscode.workspace
-      .getConfiguration('markdownPro.lint')
+      .getConfiguration('markdownJet.lint')
       .get<boolean>('enable', true);
     if (!enabled) {
       this.collection.delete(doc.uri);
@@ -106,6 +106,6 @@ function diag(
 ): vscode.Diagnostic {
   const range = new vscode.Range(line, startCol, line, endCol);
   const d = new vscode.Diagnostic(range, message, severity);
-  d.source = 'markdownPro';
+  d.source = 'markdownJet';
   return d;
 }

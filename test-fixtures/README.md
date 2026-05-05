@@ -26,4 +26,4 @@
 
 - textarea 没有语法高亮 / 行号 / 多光标(后续可能换成 CodeMirror)
 - Lint 警告只在 Problems 面板显示,textarea 里看不到下划线
-- 拖拽图片到 textarea 不会触发上传(用命令 `Markdown Pro: 上传图片` 替代)
+- 拖拽图片到 textarea 不会触发上传(用命令 `MarkdownJet: 上传图片` 替代)

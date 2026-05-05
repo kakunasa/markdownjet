@@ -1,8 +1,22 @@
+# Excluded from .vsix package — keep dist/ and media/ in.
+
 .vscode/**
+.vscode-test/**
 src/**
 node_modules/**
+test-fixtures/**
+docs/**
+
 .gitignore
+.gitattributes
 esbuild.js
 tsconfig.json
+package-lock.json
+sample.md
+
 **/*.map
+**/*.ts
 **/.DS_Store
+
+# media/icon.svg is the source for icon.png — don't ship the SVG
+media/icon.svg

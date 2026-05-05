@@ -1,4 +1,4 @@
-# Markdown Pro 全功能演示
+# MarkdownJet 全功能演示
 
 > 这一个文件覆盖**所有**插件功能。打开后切「双栏」或「预览」,逐节往下滚,
 > 同时用左侧 **Markdown 大纲** 跳转,你应该能验证编辑/渲染/同步/Lint 的全部行为。
@@ -140,7 +140,7 @@ done
 ```json
 {
   "name": "vscode-markdown-pro",
-  "displayName": "Markdown Pro",
+  "displayName": "MarkdownJet",
   "version": "0.0.1",
   "engines": { "vscode": "^1.85.0" },
   "categories": ["Other"]
@@ -441,7 +441,7 @@ export function activate(context: vscode.ExtensionContext) {
   const provider = new MarkdownEditorProvider(context);
   context.subscriptions.push(
     vscode.window.registerCustomEditorProvider(
-      'markdownPro.editor',
+      'markdownJet.editor',
       provider,
       {
         webviewOptions: { retainContextWhenHidden: true },

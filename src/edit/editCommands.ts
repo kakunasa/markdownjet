@@ -3,10 +3,10 @@ import { MarkdownEditorProvider } from '../editor/markdownEditor';
 
 export function registerEditCommands(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerCommand('markdownPro.insertTable', insertTable),
-    vscode.commands.registerCommand('markdownPro.insertLink', insertLink),
-    vscode.commands.registerCommand('markdownPro.insertImage', insertImage),
-    vscode.commands.registerCommand('markdownPro.format', formatDocument)
+    vscode.commands.registerCommand('markdownJet.insertTable', insertTable),
+    vscode.commands.registerCommand('markdownJet.insertLink', insertLink),
+    vscode.commands.registerCommand('markdownJet.insertImage', insertImage),
+    vscode.commands.registerCommand('markdownJet.format', formatDocument)
   );
 }
 

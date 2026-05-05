@@ -1,139 +1,159 @@
 {
-  "name": "vscode-markdown-pro",
-  "displayName": "Markdown Pro",
-  "description": "Single-tab Markdown editor with edit / both / preview modes, Mermaid + KaTeX, lint, image upload, outline.",
+  "name": "markdownjet",
+  "displayName": "MarkdownJet",
+  "description": "JetBrains-style single-tab Markdown editor for VS Code: CodeMirror 6 + Mermaid + KaTeX + syntax highlighting + bidirectional scroll sync.",
   "version": "0.0.1",
   "publisher": "kakunasa",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "homepage": "https://github.com/kakunasa/vscode-markdown-pro#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kakunasa/vscode-markdown-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kakunasa/vscode-markdown-pro/issues"
+  },
+  "qna": "marketplace",
+  "keywords": [
+    "markdown", "preview", "mermaid", "katex", "outline",
+    "syntax-highlighting", "single-tab", "scroll-sync",
+    "codemirror", "github-style"
+  ],
+  "galleryBanner": {
+    "color": "#4f46e5",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": ["Programming Languages", "Linters", "Formatters", "Other"],
   "activationEvents": [
     "onLanguage:markdown",
-    "onCustomEditor:markdownPro.editor"
+    "onCustomEditor:markdownJet.editor"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "customEditors": [
       {
-        "viewType": "markdownPro.editor",
-        "displayName": "Markdown Pro",
+        "viewType": "markdownJet.editor",
+        "displayName": "MarkdownJet",
         "selector": [{ "filenamePattern": "*.md" }, { "filenamePattern": "*.markdown" }],
         "priority": "default"
       }
     ],
     "commands": [
       {
-        "command": "markdownPro.viewMode.editOnly", "title": "Markdown Pro: 编辑模式",
+        "command": "markdownJet.viewMode.editOnly", "title": "MarkdownJet: 编辑模式",
         "icon": { "light": "media/edit-inactive-light.svg", "dark": "media/edit-inactive-dark.svg" }
       },
       {
-        "command": "markdownPro.viewMode.editOnly.active", "title": "Markdown Pro: 编辑模式 (当前)",
+        "command": "markdownJet.viewMode.editOnly.active", "title": "MarkdownJet: 编辑模式 (当前)",
         "icon": { "light": "media/edit-active-light.svg", "dark": "media/edit-active-dark.svg" }
       },
       {
-        "command": "markdownPro.viewMode.both", "title": "Markdown Pro: 双栏模式",
+        "command": "markdownJet.viewMode.both", "title": "MarkdownJet: 双栏模式",
         "icon": { "light": "media/both-inactive-light.svg", "dark": "media/both-inactive-dark.svg" }
       },
       {
-        "command": "markdownPro.viewMode.both.active", "title": "Markdown Pro: 双栏模式 (当前)",
+        "command": "markdownJet.viewMode.both.active", "title": "MarkdownJet: 双栏模式 (当前)",
         "icon": { "light": "media/both-active-light.svg", "dark": "media/both-active-dark.svg" }
       },
       {
-        "command": "markdownPro.viewMode.previewOnly", "title": "Markdown Pro: 预览模式",
+        "command": "markdownJet.viewMode.previewOnly", "title": "MarkdownJet: 预览模式",
         "icon": { "light": "media/preview-inactive-light.svg", "dark": "media/preview-inactive-dark.svg" }
       },
       {
-        "command": "markdownPro.viewMode.previewOnly.active", "title": "Markdown Pro: 预览模式 (当前)",
+        "command": "markdownJet.viewMode.previewOnly.active", "title": "MarkdownJet: 预览模式 (当前)",
         "icon": { "light": "media/preview-active-light.svg", "dark": "media/preview-active-dark.svg" }
       },
-      { "command": "markdownPro.insertTable",     "title": "Markdown Pro: 插入表格" },
-      { "command": "markdownPro.insertLink",      "title": "Markdown Pro: 插入链接" },
-      { "command": "markdownPro.insertImage",     "title": "Markdown Pro: 插入图片" },
-      { "command": "markdownPro.format",          "title": "Markdown Pro: 格式化文档" },
-      { "command": "markdownPro.lint.run",        "title": "Markdown Pro: 运行 Lint" },
-      { "command": "markdownPro.openInTextEditor","title": "Markdown Pro: 用纯文本编辑器打开" }
+      { "command": "markdownJet.insertTable",     "title": "MarkdownJet: 插入表格" },
+      { "command": "markdownJet.insertLink",      "title": "MarkdownJet: 插入链接" },
+      { "command": "markdownJet.insertImage",     "title": "MarkdownJet: 插入图片" },
+      { "command": "markdownJet.format",          "title": "MarkdownJet: 格式化文档" },
+      { "command": "markdownJet.lint.run",        "title": "MarkdownJet: 运行 Lint" },
+      { "command": "markdownJet.openInTextEditor","title": "MarkdownJet: 用纯文本编辑器打开" }
     ],
     "menus": {
       "commandPalette": [
-        { "command": "markdownPro.viewMode.editOnly.active",    "when": "false" },
-        { "command": "markdownPro.viewMode.both.active",        "when": "false" },
-        { "command": "markdownPro.viewMode.previewOnly.active", "when": "false" }
+        { "command": "markdownJet.viewMode.editOnly.active",    "when": "false" },
+        { "command": "markdownJet.viewMode.both.active",        "when": "false" },
+        { "command": "markdownJet.viewMode.previewOnly.active", "when": "false" }
       ],
       "editor/title": [
         {
-          "command": "markdownPro.viewMode.editOnly.active",
-          "when": "activeCustomEditorId == 'markdownPro.editor' && markdownPro.activeMode == 'edit'",
+          "command": "markdownJet.viewMode.editOnly.active",
+          "when": "activeCustomEditorId == 'markdownJet.editor' && markdownJet.activeMode == 'edit'",
           "group": "navigation@1"
         },
         {
-          "command": "markdownPro.viewMode.editOnly",
-          "when": "activeCustomEditorId == 'markdownPro.editor' && markdownPro.activeMode != 'edit'",
+          "command": "markdownJet.viewMode.editOnly",
+          "when": "activeCustomEditorId == 'markdownJet.editor' && markdownJet.activeMode != 'edit'",
           "group": "navigation@1"
         },
         {
-          "command": "markdownPro.viewMode.both.active",
-          "when": "activeCustomEditorId == 'markdownPro.editor' && markdownPro.activeMode == 'both'",
+          "command": "markdownJet.viewMode.both.active",
+          "when": "activeCustomEditorId == 'markdownJet.editor' && markdownJet.activeMode == 'both'",
           "group": "navigation@2"
         },
         {
-          "command": "markdownPro.viewMode.both",
-          "when": "activeCustomEditorId == 'markdownPro.editor' && markdownPro.activeMode != 'both'",
+          "command": "markdownJet.viewMode.both",
+          "when": "activeCustomEditorId == 'markdownJet.editor' && markdownJet.activeMode != 'both'",
           "group": "navigation@2"
         },
         {
-          "command": "markdownPro.viewMode.previewOnly.active",
-          "when": "activeCustomEditorId == 'markdownPro.editor' && markdownPro.activeMode == 'preview'",
+          "command": "markdownJet.viewMode.previewOnly.active",
+          "when": "activeCustomEditorId == 'markdownJet.editor' && markdownJet.activeMode == 'preview'",
           "group": "navigation@3"
         },
         {
-          "command": "markdownPro.viewMode.previewOnly",
-          "when": "activeCustomEditorId == 'markdownPro.editor' && markdownPro.activeMode != 'preview'",
+          "command": "markdownJet.viewMode.previewOnly",
+          "when": "activeCustomEditorId == 'markdownJet.editor' && markdownJet.activeMode != 'preview'",
           "group": "navigation@3"
         }
       ],
       "editor/context": [
-        { "command": "markdownPro.insertTable", "when": "resourceLangId == markdown", "group": "markdownPro@1" },
-        { "command": "markdownPro.insertLink",  "when": "resourceLangId == markdown", "group": "markdownPro@2" },
-        { "command": "markdownPro.insertImage", "when": "resourceLangId == markdown", "group": "markdownPro@3" }
+        { "command": "markdownJet.insertTable", "when": "resourceLangId == markdown", "group": "markdownJet@1" },
+        { "command": "markdownJet.insertLink",  "when": "resourceLangId == markdown", "group": "markdownJet@2" },
+        { "command": "markdownJet.insertImage", "when": "resourceLangId == markdown", "group": "markdownJet@3" }
       ],
       "explorer/context": [
-        { "command": "markdownPro.openInTextEditor",
+        { "command": "markdownJet.openInTextEditor",
           "when": "resourceExtname == .md || resourceExtname == .markdown",
           "group": "navigation" }
       ]
     },
     "keybindings": [
-      { "command": "markdownPro.insertTable", "key": "ctrl+alt+t", "mac": "cmd+alt+t",
-        "when": "resourceLangId == markdown || activeCustomEditorId == 'markdownPro.editor'" },
-      { "command": "markdownPro.insertLink",  "key": "ctrl+alt+l", "mac": "cmd+alt+l",
-        "when": "resourceLangId == markdown || activeCustomEditorId == 'markdownPro.editor'" },
-      { "command": "markdownPro.insertImage", "key": "ctrl+alt+i", "mac": "cmd+alt+i",
-        "when": "resourceLangId == markdown || activeCustomEditorId == 'markdownPro.editor'" },
-      { "command": "markdownPro.format",      "key": "shift+alt+f","mac": "shift+alt+f",
-        "when": "resourceLangId == markdown || activeCustomEditorId == 'markdownPro.editor'" }
+      { "command": "markdownJet.insertTable", "key": "ctrl+alt+t", "mac": "cmd+alt+t",
+        "when": "resourceLangId == markdown || activeCustomEditorId == 'markdownJet.editor'" },
+      { "command": "markdownJet.insertLink",  "key": "ctrl+alt+l", "mac": "cmd+alt+l",
+        "when": "resourceLangId == markdown || activeCustomEditorId == 'markdownJet.editor'" },
+      { "command": "markdownJet.insertImage", "key": "ctrl+alt+i", "mac": "cmd+alt+i",
+        "when": "resourceLangId == markdown || activeCustomEditorId == 'markdownJet.editor'" },
+      { "command": "markdownJet.format",      "key": "shift+alt+f","mac": "shift+alt+f",
+        "when": "resourceLangId == markdown || activeCustomEditorId == 'markdownJet.editor'" }
     ],
     "views": {
       "explorer": [
-        { "id": "markdownProOutline", "name": "Markdown 大纲" }
+        { "id": "markdownJetOutline", "name": "Markdown 大纲" }
       ]
     },
     "configuration": {
-      "title": "Markdown Pro",
+      "title": "MarkdownJet",
       "properties": {
-        "markdownPro.preview.theme": {
+        "markdownJet.preview.theme": {
           "type": "string",
           "enum": ["light", "dark", "github", "solarized"],
           "default": "light",
           "description": "预览主题"
         },
-        "markdownPro.preview.enableMermaid": {
+        "markdownJet.preview.enableMermaid": {
           "type": "boolean", "default": true, "description": "启用 Mermaid 图表渲染"
         },
-        "markdownPro.preview.enableMath": {
+        "markdownJet.preview.enableMath": {
           "type": "boolean", "default": true, "description": "启用 KaTeX 数学公式"
         },
-        "markdownPro.lint.enable": {
+        "markdownJet.lint.enable": {
           "type": "boolean", "default": true, "description": "启用 Lint 校验"
         }
       }

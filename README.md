@@ -1,8 +1,8 @@
-# Markdown Pro
+# MarkdownJet
 
 > 单 tab、多模式的 VS Code Markdown 编辑器,内嵌 CodeMirror + Mermaid + KaTeX + 语法高亮 + 实时预览。
 
-![mode buttons in tab bar](docs/screenshots/buttons.svg)
+![mode buttons in tab bar](docs/screenshots/buttons.png)
 
 ## ✨ 特性
 
@@ -25,7 +25,7 @@
 
 ### 用户端
 
-直接安装(打包好后)`.vsix` 即可。.md 文件会**默认**用 Markdown Pro 打开。
+直接安装(打包好后)`.vsix` 即可。.md 文件会**默认**用 MarkdownJet 打开。
 
 如果某个文件想用原生编辑器:右键 → **Reopen Editor With** → **Text Editor**。
 
@@ -92,7 +92,7 @@ active 模式的按钮会**填实**,inactive 仅外框,不靠粗细/颜色对比
 │  VS Code Extension Host                                      │
 │                                                              │
 │  ┌────────────────────────────────────────────────────────┐ │
-│  │  CustomTextEditorProvider (markdownPro.editor)          │ │
+│  │  CustomTextEditorProvider (markdownJet.editor)          │ │
 │  │  - 1 webview / 1 tab,绑定 TextDocument                  │ │
 │  │  - postMessage 双向通信                                 │ │
 │  │  - 防抖 250ms 写回 TextDocument(保 undo 历史)         │ │
@@ -167,20 +167,20 @@ webview 包含 CodeMirror + 启动逻辑 ≈ 1.3 MB(unminified)。Mermaid/KaTeX 
 
 ## ⚙️ 配置
 
-`Cmd+,` 搜 `markdownPro`:
+`Cmd+,` 搜 `markdownJet`:
 
 | 配置项 | 默认 | 说明 |
 | --- | --- | --- |
-| `markdownPro.preview.theme` | `light` | 预览主题:`light` / `dark` / `github` / `solarized`(已基本被 VS Code 主题接管,保留兼容) |
-| `markdownPro.preview.enableMermaid` | `true` | 是否启用 Mermaid 图表 |
-| `markdownPro.preview.enableMath` | `true` | 是否启用 KaTeX |
-| `markdownPro.lint.enable` | `true` | 是否启用 Lint 实时校验 |
+| `markdownJet.preview.theme` | `light` | 预览主题:`light` / `dark` / `github` / `solarized`(已基本被 VS Code 主题接管,保留兼容) |
+| `markdownJet.preview.enableMermaid` | `true` | 是否启用 Mermaid 图表 |
+| `markdownJet.preview.enableMath` | `true` | 是否启用 KaTeX |
+| `markdownJet.lint.enable` | `true` | 是否启用 Lint 实时校验 |
 
 ## 🐞 已知限制
 
 - **Lint 警告**只显示在 Problems 面板,不在 CodeMirror 编辑区显示下划线(`@codemirror/lint` 集成是后续 TODO)
-- **预览**目前不支持图片拖拽(命令 `Markdown Pro: 插入图片` 选「URL」/「本地文件」替代)
-- 切回 VS Code 原生编辑器:右键 .md 文件 → **Reopen Editor With** → **Text Editor** 或者命令面板搜 `Markdown Pro: 用纯文本编辑器打开`
+- **预览**目前不支持图片拖拽(命令 `MarkdownJet: 插入图片` 选「URL」/「本地文件」替代)
+- 切回 VS Code 原生编辑器:右键 .md 文件 → **Reopen Editor With** → **Text Editor** 或者命令面板搜 `MarkdownJet: 用纯文本编辑器打开`
 - 已渲染的 Mermaid 图在主题切换后**保留旧色**,需要触发一次内容更新才会重渲染
 
 ## 📦 依赖体积

@@ -60,22 +60,22 @@ interface PreviewMessage {
 
 | 命令 ID | 标题 | 快捷键 |
 | --- | --- | --- |
-| `markdownPro.insertTable` | 插入表格 | `Cmd+Alt+T` |
-| `markdownPro.insertLink` | 插入链接 | `Cmd+Alt+L` |
-| `markdownPro.insertImage` | 插入图片 | `Cmd+Alt+I` |
-| `markdownPro.format` | 格式化文档 | `Shift+Alt+F` |
-| `markdownPro.upload.image` | 上传图片 | — |
+| `markdownJet.insertTable` | 插入表格 | `Cmd+Alt+T` |
+| `markdownJet.insertLink` | 插入链接 | `Cmd+Alt+L` |
+| `markdownJet.insertImage` | 插入图片 | `Cmd+Alt+I` |
+| `markdownJet.format` | 格式化文档 | `Shift+Alt+F` |
+| `markdownJet.upload.image` | 上传图片 | — |
 
 ### 3.2 配置
 
 ```jsonc
 {
-  "markdownPro.preview.theme": "light",       // light | dark | github | solarized
-  "markdownPro.preview.enableMermaid": true,
-  "markdownPro.preview.enableMath": true,
-  "markdownPro.lint.enable": true,
-  "markdownPro.upload.target": "local",       // local | custom
-  "markdownPro.upload.localDir": "assets"
+  "markdownJet.preview.theme": "light",       // light | dark | github | solarized
+  "markdownJet.preview.enableMermaid": true,
+  "markdownJet.preview.enableMath": true,
+  "markdownJet.lint.enable": true,
+  "markdownJet.upload.target": "local",       // local | custom
+  "markdownJet.upload.localDir": "assets"
 }
 ```
 
