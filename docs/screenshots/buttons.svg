@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <!-- ───────── Light theme row ───────── -->
+  <rect x="0" y="0" width="480" height="100" fill="#fafafa"/>
+  <rect x="0" y="0" width="480" height="100" fill="none" stroke="#e0e0e0"/>
+  <text x="14" y="20" font-size="11" fill="#888">Light theme  ·  当前 = 双栏</text>
+
+  <!-- inactive edit -->
+  <g transform="translate(132, 30)">
+    <rect x="1" y="2" width="14" height="12" rx="1.5" stroke="#a0a0a0" stroke-width="1.0" fill="none"/>
+    <path d="M6.5 5L3.5 8L6.5 11" stroke="#a0a0a0" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M9.5 5L12.5 8L9.5 11" stroke="#a0a0a0" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- active both -->
+  <g transform="translate(180, 30)">
+    <rect x="1" y="2" width="14" height="12" rx="1.5" stroke="#424242" stroke-width="1.0" fill="none"/>
+    <line x1="1" y1="5.5" x2="15" y2="5.5" stroke="#424242" stroke-width="1.0"/>
+    <path fill="#424242" fill-rule="evenodd" d="M1.55 6.05 L14.45 6.05 L14.45 12.95 A1.0 1.0 0 0 1 13.45 13.95 L2.55 13.95 A1.0 1.0 0 0 1 1.55 12.95 Z M6.5 7.4 L4 9.7 L6.5 12 L6.5 11.2 L4.9 9.7 L6.5 8.2 Z M9.5 7.4 L12 9.7 L9.5 12 L9.5 11.2 L11.1 9.7 L9.5 8.2 Z"/>
+  </g>
+  <!-- inactive preview -->
+  <g transform="translate(228, 30)">
+    <rect x="1" y="2" width="14" height="12" rx="1.5" stroke="#a0a0a0" stroke-width="1.0" fill="none"/>
+    <line x1="1" y1="5.5" x2="15" y2="5.5" stroke="#a0a0a0" stroke-width="1.0"/>
+  </g>
+
+  <!-- labels -->
+  <text x="139" y="64" font-size="10" fill="#888" text-anchor="middle">编辑</text>
+  <text x="187" y="64" font-size="10" fill="#424242" text-anchor="middle" font-weight="600">双栏</text>
+  <text x="235" y="64" font-size="10" fill="#888" text-anchor="middle">预览</text>
+
+  <text x="14" y="84" font-size="10" fill="#888">inactive = 浅灰外框  ·  active = 深色填实(双栏含 &lt;&gt; 镂空)</text>
+
+  <!-- ───────── Dark theme row ───────── -->
+  <rect x="0" y="100" width="480" height="100" fill="#1e1e1e"/>
+  <rect x="0" y="100" width="480" height="100" fill="none" stroke="#333"/>
+  <text x="14" y="120" font-size="11" fill="#888">Dark theme  ·  当前 = 预览</text>
+
+  <!-- inactive edit -->
+  <g transform="translate(132, 130)">
+    <rect x="1" y="2" width="14" height="12" rx="1.5" stroke="#6e6e6e" stroke-width="1.0" fill="none"/>
+    <path d="M6.5 5L3.5 8L6.5 11" stroke="#6e6e6e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M9.5 5L12.5 8L9.5 11" stroke="#6e6e6e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- inactive both -->
+  <g transform="translate(180, 130)">
+    <rect x="1" y="2" width="14" height="12" rx="1.5" stroke="#6e6e6e" stroke-width="1.0" fill="none"/>
+    <line x1="1" y1="5.5" x2="15" y2="5.5" stroke="#6e6e6e" stroke-width="1.0"/>
+    <path d="M6.5 7.4L4 9.7L6.5 12" stroke="#6e6e6e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M9.5 7.4L12 9.7L9.5 12" stroke="#6e6e6e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- active preview -->
+  <g transform="translate(228, 130)">
+    <rect x="1" y="2" width="14" height="12" rx="1.5" stroke="#cccccc" stroke-width="1.0" fill="none"/>
+    <line x1="1" y1="5.5" x2="15" y2="5.5" stroke="#cccccc" stroke-width="1.0"/>
+    <path fill="#cccccc" d="M1.55 6.05 L14.45 6.05 L14.45 12.95 A1.0 1.0 0 0 1 13.45 13.95 L2.55 13.95 A1.0 1.0 0 0 1 1.55 12.95 Z"/>
+  </g>
+
+  <text x="139" y="164" font-size="10" fill="#888" text-anchor="middle">编辑</text>
+  <text x="187" y="164" font-size="10" fill="#888" text-anchor="middle">双栏</text>
+  <text x="235" y="164" font-size="10" fill="#cccccc" text-anchor="middle" font-weight="600">预览</text>
+
+  <text x="14" y="184" font-size="10" fill="#888">同色族,inactive 暗灰,active 亮白(填实)</text>
+</svg>

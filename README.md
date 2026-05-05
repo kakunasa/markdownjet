@@ -2,7 +2,7 @@
 
 > 单 tab、多模式的 VS Code Markdown 编辑器,内嵌 CodeMirror + Mermaid + KaTeX + 语法高亮 + 实时预览。
 
-![mode buttons in tab bar](docs/screenshots/buttons.png)
+![mode buttons in tab bar](docs/screenshots/buttons.svg)
 
 ## ✨ 特性
 
