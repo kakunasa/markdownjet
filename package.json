@@ -2,7 +2,7 @@
   "name": "markdownjet",
   "displayName": "MarkdownJet",
   "description": "JetBrains-style single-tab Markdown editor for VS Code: CodeMirror 6 + Mermaid + KaTeX + syntax highlighting + bidirectional scroll sync.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "kakunasa",
   "license": "MIT",
   "icon": "media/icon.png",
@@ -71,8 +71,10 @@
       { "command": "markdownJet.insertLink",      "title": "MarkdownJet: 插入链接" },
       { "command": "markdownJet.insertImage",     "title": "MarkdownJet: 插入图片" },
       { "command": "markdownJet.format",          "title": "MarkdownJet: 格式化文档" },
-      { "command": "markdownJet.lint.run",        "title": "MarkdownJet: 运行 Lint" },
-      { "command": "markdownJet.openInTextEditor","title": "MarkdownJet: 用纯文本编辑器打开" }
+      { "command": "markdownJet.lint.run",         "title": "MarkdownJet: 运行 Lint" },
+      { "command": "markdownJet.openInTextEditor", "title": "MarkdownJet: 用纯文本编辑器打开" },
+      { "command": "markdownJet.setAsDefault",     "title": "MarkdownJet: 设为 Markdown 默认编辑器" },
+      { "command": "markdownJet.resetDefaultPrompt", "title": "MarkdownJet: 重新启用「设为默认」首次提示" }
     ],
     "menus": {
       "commandPalette": [

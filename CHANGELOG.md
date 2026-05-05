@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2026-05-05
+
+### Added
+
+- **First-run prompt** to set MarkdownJet as the default editor for `*.md`
+  and `*.markdown`. If the user already has another editor association,
+  the prompt explains the conflict and offers three actions:
+  *Set as Default*, *Reopen Current File Only*, *Don't Show Again*.
+- New command `MarkdownJet: 设为 Markdown 默认编辑器` —
+  one-click setup any time after install.
+- New command `MarkdownJet: 重新启用「设为默认」首次提示` —
+  reverts the "Don't show again" choice if the user changes their mind.
+
+### Fixed
+
+- Users with an existing `workbench.editorAssociations` entry mapping
+  `*.md` to a different editor (e.g. `vscode.markdown.preview.editor`)
+  no longer have to edit `settings.json` by hand to activate MarkdownJet.
+
 ## [0.0.1] - 2026-05-05
 
 ### Added
