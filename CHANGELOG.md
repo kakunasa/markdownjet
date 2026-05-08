@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7] - 2026-05-08
+
+### Changed
+
+- Updated `both-inactive` icon to match the new `both-active` shape:
+  vertical divider with `<>` brackets on the left, right pane outlined.
+  This makes the inactive button visually preview what the first click
+  will do — enter horizontal split (the default Both layout).
+
 ## [0.0.6] - 2026-05-08
 
 ### Added
